@@ -6,8 +6,12 @@ var Gladiators = function () {
     this.attack = 0;
     this.hitpoints = Math.floor(Math.random() * (100 - 80 + 1)) + 80;
   this.fight = function (enemy) {
-      if(this.attack > enemy.attack) {
-          enemy.hitpoints -= enemy.attack;
+      while (this.hitpoints != 0 || enemy.hitpoints != 0) {
+          if (this.attack > enemy.attack) {
+              enemy.hitpoints -= enemy.attack;
+          } else {
+              this.hitpoints -= this.attack;
+          }
       }
       if(this.hitpoints === 0) {
           console.log('You died')
