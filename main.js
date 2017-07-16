@@ -48,4 +48,4 @@
     var heracles = new Champion();
     var boar = new Monster();
 
-    heracles.fight(boar);
+    console.log(heracles.fight(boar));
